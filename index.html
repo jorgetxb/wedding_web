@@ -32,7 +32,7 @@
 			
 			<div id="content-1" class="content content--switch content--switch-current">
 				<div id="video-container">
-					<video id="video" width="100%" height="100%" autoplay loop poster="./img/bg1.jpg" autoplay>
+					<video id="video" width="100%" height="100%" autoplay loop autoplay>  <!--poster="./img/bg1.jpg"-->
 					  <source src="./img/hero.mp4" type="video/mp4">
 					</video>
 					<!-- <iframe id="youtube" width="100%" height="100%" src="https://www.youtube.com/embed/AjiiOotXtaQ?&autoplay=1&loop=1&rel=0&showinfo=0&color=white&controls=0&playlist=AjiiOotXtaQ" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe> -->
@@ -59,8 +59,8 @@
 					 minima nulla expedita!</div>
 			</div>
 			<div id="content-6" class="content content--switch" onclick="changeImage()">
-				<h2 class="content__title">Sobre nosotros</h2>
-				<div class="content__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				<h2 class="content__title abus_text">Sobre nosotros</h2>
+				<div id="abus_text" class="content__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 					Aliquam corporis cupiditate quae laborum. Alias nulla soluta nesciunt ipsam nostrum 
 					blanditiis, ipsa mollitia nobis quasi repudiandae, reprehenderit, est ipsum reiciendis.
 					Repudiandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur 
@@ -70,6 +70,8 @@
 					repellat voluptatem dolor pariatur consequatur! Magnam quae illum dolores velit, 
 					praesentium suscipit distinctio ipsam et quos alias.
 				</div>
+				<div id="hide" onclick="abus_hide()"></div>
+				<div id="show" onclick="abus_hide()"></div>
 			</div>
 			<nav class="grim">
 				<div class="grim__item">

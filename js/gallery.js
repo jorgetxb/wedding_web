@@ -28,3 +28,20 @@ var images = [
   
   // Cambia la imagen automáticamente cada 7.5 segundos
   setInterval(changeImage, 7500);
+
+  
+
+  var opacity = 1;
+
+  function abus_hide() {
+
+    document.getElementById("hide").style.display = "none";
+    document.getElementById("show").style.display = "block";
+
+      opacity -= 0.1;
+      document.getElementById("abus_text").style.opacity = opacity;
+
+      if (opacity > 0) {
+        requestAnimationFrame(abus_hide);
+      }
+  }
