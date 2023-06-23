@@ -118,7 +118,30 @@
 	}
 }
 
-#abus_text {
+#abus {
+	max-height: 35vh;
+	overflow-x: hidden;
+}
+
+#abus::-webkit-scrollbar {
+	width: 5px;
+}
+
+#abus::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey; 
+	border-radius: 10px;
+}
+
+#abus::-webkit-scrollbar-thumb {
+	background: white; 
+	border-radius: 10px;
+  }
+
+#abus::-webkit-scrollbar-thumb:hover {
+	background: #aaa; 
+}
+  
+.abus_text {
 	transition: opacity 2s;
 }
 
@@ -126,7 +149,7 @@
 	position: relative;
 	height: 50px;
 	width: 100px;
-	margin: 0 auto;
+	margin: 25px auto;
 	background-image: url("../img/eye.svg");
 	background-position: center;
 	background-repeat: no-repeat;
@@ -140,7 +163,7 @@
 	position: relative;
 	height: 50px;
 	width: 100px;
-	margin: 0 auto;
+	margin: 25px auto;
 	background-image: url("../img/eye2.svg");
 	background-position: center;
 	background-repeat: no-repeat;
