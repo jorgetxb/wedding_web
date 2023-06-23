@@ -160,6 +160,16 @@
 	}
 }
 
+.content-6_title {
+	padding: 0 0 0 50vw !important;
+}
+
+@media (orientation: landscape) {
+	.content-6_title {
+		padding: 0 1rem !important;
+	}
+}
+
 #abus {
 	max-height: 35vh;
 	overflow-x: hidden;
