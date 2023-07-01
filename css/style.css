@@ -9,12 +9,28 @@
 	--color-info: #000;
 }
 
+.responsive {
+	display: none;
+}
+
+@media (orientation: landscape) and (max-width: 400px) {
+	.responsive {
+		display: block;
+		z-index: 9999;
+		background-color: white;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+}
+
+
+
 .menu-trigger {
 	position: relative;
 	background: none;
 	color: #fff;
 	border: 0;
-	padding: 0 0 5vh 5vw;
 	grid-area: menu;
 	justify-self: start;
 	align-self: end;
@@ -25,7 +41,7 @@
 }
 
 .menu-trigger--close {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	color: #000;
 	align-self: center;
 }
@@ -60,7 +76,7 @@
 
 .content__subtitle {
 	color: white;
-	width: 50%;
+	width: 70%;
 	max-width: 500px;
 	z-index: 1;
 	font-size: 1rem;
@@ -478,8 +494,13 @@
 
 @media (orientation: landscape) {
 	.grim__item-title {
-		font-size: 5rem;
 		transform: rotate(0deg);
+	}
+}
+
+@media (min-width: 1080px) {
+	.grim__item-title {
+		font-size: 5rem;
 	}
 }
 
@@ -499,6 +520,12 @@
 		font-size: 1.5rem;
 		margin: 0.5rem 0 0 0;
 	}
+}
+
+@media (max-width: 1080px) {
+	.grim__item-desc {
+		font-size: 1rem;
+	}	
 }
 
 .grim__item-desc::after {
