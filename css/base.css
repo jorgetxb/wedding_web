@@ -322,6 +322,12 @@ button:focus {
 	z-index: 1000;
 }
 
+@media (max-width: 1080px) {
+	.content--fixed {
+		left: 50px;
+	}
+}
+
 .info {
 	margin: 0;
 }

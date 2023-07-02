@@ -9,25 +9,9 @@
 	--color-info: #000;
 }
 
-.responsive {
-	display: none;
-}
-
-@media (orientation: landscape) and (max-width: 400px) {
-	.responsive {
-		display: block;
-		z-index: 9999;
-		background-color: white;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-	}
-}
-
-
-
 .menu-trigger {
 	position: relative;
+	margin-bottom: 50px;
 	background: none;
 	color: #fff;
 	border: 0;
@@ -40,10 +24,24 @@
 	filter: drop-shadow(5px 5px 5px black);
 }
 
+@media (max-width: 1080px) {
+	.menu-trigger {
+		transform: rotate(90deg);
+	}
+}
+
 .menu-trigger--close {
 	font-size: 1.5rem;
 	color: #000;
 	align-self: center;
+	background: none;
+	border: 0;
+	grid-area: menu;
+	/* justify-self: start; */
+	/* align-self: end; */
+	cursor: pointer;
+	pointer-events: auto;
+	filter: drop-shadow(5px 5px 5px black);
 }
 
 .content--switch {
@@ -81,6 +79,7 @@
 	z-index: 1;
 	font-size: 1rem;
 	line-height: 1.5;
+	text-align: center;
 }
 
 #content-2 {
@@ -113,6 +112,21 @@
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
 }
+
+@media (orientation: portrait) {
+	#content-3.content {
+		justify-content: flex-start;
+	}
+}
+
+.form {
+	width: 100%; 
+	height: 50vh; 
+	max-width: 640px;
+	z-index: 1;
+}
+
+
 
 #content-4 {
 	background-image: url(../img/bg3.jpg);
