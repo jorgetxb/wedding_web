@@ -179,12 +179,21 @@
 
 #content-6 img {
 	height: auto;
-	width: 100vw;
+	height: 100vh;
+	/* width: 100vw; */
 	position: absolute;
 	transition: opacity 1s ease-in-out;
-	filter: brightness(0.5);
 	animation-name: opacity;
 	animation-duration: 4s;
+}
+
+#brightness_photo {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #000;
+	filter: opacity(0.5);
+	z-index: 1;
 }
 
 @keyframes opacity {
@@ -239,7 +248,7 @@
 	height: 50px;
 	width: 100px;
 	margin: 25px auto;
-	background-image: url("../img/eye.svg");
+	background-image: url("../img/eye2.svg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -253,7 +262,7 @@
 	height: 50px;
 	width: 100px;
 	margin: 25px auto;
-	background-image: url("../img/eye2.svg");
+	background-image: url("../img/eye.svg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
