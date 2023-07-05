@@ -48,7 +48,7 @@ function changeImage() {
     gallery.appendChild(img);
     var imgs = document.getElementsByTagName('img'); // Obtener todos los elementos img dentro del div
     var cantidadImagenes = imgs.length; // Obtener la cantidad de imágenes
-    if (cantidadImagenes > 2 ) {
+    if (cantidadImagenes > 1 ) {
       document.getElementsByClassName("abus_photo")[0].remove();
     }
   };

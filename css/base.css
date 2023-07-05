@@ -61,6 +61,15 @@ strong {
 	font-weight: bold;
 }
 
+ul {
+	display: grid;
+    justify-content: center;
+}
+
+li {
+	text-align: left;
+}
+
 dfn {
 	font-style: italic;
 }

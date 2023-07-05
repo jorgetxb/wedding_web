@@ -12,7 +12,8 @@
 .menu-trigger {
 	position: relative;
 	margin-bottom: 50px;
-	margin-left: -30px;
+	margin-left: -20px;
+	padding: 0 15px;
 	background: none;
 	color: #fff;
 	background-color: #000;
@@ -55,6 +56,10 @@
 	background-color: beige;
 }
 
+#home_button {
+	font-size: 3rem;
+}
+
 #video-container {
 	position: fixed;
 	top: 0;
@@ -80,7 +85,7 @@
 	width: 70%;
 	max-width: 500px;
 	z-index: 1;
-	font-size: 1rem;
+	font-size: 1.25rem;
 	line-height: 1.5;
 	text-align: center;
 }
@@ -126,8 +131,9 @@
 }
 
 .form {
-	width: 100%; 
-	height: 60vh;
+	width: 100%;
+	height: auto;	
+	min-height: 350px;
 	max-width: 640px;
 	margin-top: 30px;
 	z-index: 1;
@@ -167,6 +173,20 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.map {
+	min-width: 250px;
+	border-radius: 25px;
+	box-shadow: 10px 10px 10px black;
+	background-color: white;
+	color: green;
+	font-size: 1.25rem;
+	padding: 7.5px;
+}
+
+.map:hover {
+	color: #000;
 }
 
 #content-6 {
@@ -296,84 +316,60 @@
 }
 
 .grim__item:first-child {
-	grid-area: 31 / 1 / 33 / 2;
+	grid-area: 30 / 1 / 33 / 11;
 }
 
 .grim__item:nth-child(2) {
-	grid-area: 31 / 2 / 33 / 3;
+	grid-area: 27 / 1 / 30 / 11;
 }
 
 .grim__item:nth-child(3) {
-	grid-area: 29 / 1 / 31 / 3;
+	grid-area: 27 / 11 / 33 / 33;
 }
 
 .grim__item:nth-child(4) {
-	grid-area: 29 / 3 / 33 / 5;
+	grid-area: 16 / 1 / 27 / 11;
 }
 
 .grim__item:nth-child(5) {
-	grid-area: 25 / 1 / 29 / 5;
+	grid-area: 16 / 11 / 27 / 22;
 }
 
 .grim__item:nth-child(6) {
-	grid-area: 25 / 5 / 33 / 11;
+	grid-area: 16 / 22 / 27 / 33;
 }
 
 .grim__item:nth-child(7) {
-	grid-area: 14 / 1 / 25 / 11;
-}
-
-.grim__item:nth-child(8) {
-	grid-area: 14 / 11 / 33 / 22;
-}
-
-.grim__item:nth-child(9) {
-	grid-area: 14 / 22 / 33 / 33;
-}
-
-.grim__item:nth-child(10) {
-	grid-area: 1 / 1 / 14 / 33;
+	grid-area: 1 / 1 / 16 / 33;
 }
 
 @media (orientation: landscape) {
 	.grim__item:first-child {
-		grid-area: 31 / 1 / 33 / 2;
+		grid-area: 30 / 1 / 33 / 5;
 	}
 	
 	.grim__item:nth-child(2) {
-		grid-area: 31 / 2 / 33 / 3;
+		grid-area: 24 / 1 / 30 / 5;
 	}
 	
 	.grim__item:nth-child(3) {
-		grid-area: 29 / 1 / 31 / 3;
+		grid-area: 15 / 1 / 24 / 11;
 	}
 	
 	.grim__item:nth-child(4) {
-		grid-area: 29 / 3 / 33 / 5;
+		grid-area: 24 / 11 / 33 / 5;
 	}
 	
 	.grim__item:nth-child(5) {
-		grid-area: 25 / 1 / 29 / 5;
+		grid-area: 15 / 11 / 33 / 19;
 	}
 	
 	.grim__item:nth-child(6) {
-		grid-area: 25 / 5 / 33 / 9;
+		grid-area: 1 / 1 / 15 / 19;
 	}
 	
 	.grim__item:nth-child(7) {
-		grid-area: 17 / 1 / 25 / 9;
-	}
-	
-	.grim__item:nth-child(8) {
-		grid-area: 17 / 9 / 33 / 17;
-	}
-	
-	.grim__item:nth-child(9) {
-		grid-area: 1 / 1 / 17 / 17;
-	}
-	
-	.grim__item:nth-child(10) {
-		grid-area: 1 / 17 / 33 / 33;
+		grid-area: 1 / 19 / 33 / 33;
 	}
 }
 
@@ -388,20 +384,8 @@
 	background: currentColor;
 }
 
-.grim__item-bg--1 {
-	color: #f1d3b9;
-}
-
-.grim__item-bg--2 {
-	color: #df9e98;
-}
-
 .grim__item-bg--3 {
 	color: #fcfdff;
-}
-
-.grim__item-bg--4 {
-	color: #9ed4d4;
 }
 
 .grim__item-bg--5 {
@@ -409,23 +393,23 @@
 }
 
 .grim__item-bg--6 {
-	color: #7296de;
+	color:#9586b8;
 }
 
 .grim__item-bg--7 {
-	color: #7c95b5;
+	color:rgb(231, 231, 180);
 }
 
 .grim__item-bg--8 {
-	color: #86bfbf;
+	color:rgb(155, 203, 173);
 }
 
 .grim__item-bg--9 {
-	color: #af9b9b;
+	color:darkgoldenrod;
 }
 
 .grim__item-bg--10 {
-	color: #c57d76;
+	color: rgb(164, 88, 88);
 }
 
 .grim__item-img {
@@ -442,6 +426,18 @@
 
 .grim__item:hover:hover .grim__item-img {
 	filter: brightness(1);
+}
+
+.grim__item:nth-child(-n+3) .grim__item-title {
+	transform: rotate(0deg);
+}
+
+.grim__item:nth-child(-n+3) .grim__item-inner {
+	height: auto;
+}
+
+.grim__item:nth-child(-n+3) .grim__item-desc {
+	margin: 1rem 0 0 0;;
 }
 
 .grim__item-img--1 {
@@ -493,11 +489,11 @@
 }
 
 .grim__item-inner {
-	padding: 0 1rem;
+	padding-bottom: 2rem;
 	display: flex;
-	height: 50vh;
+	height: 33vh;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: end;
 	align-items: center;
 	text-align: center;
 	position: relative;
@@ -508,6 +504,7 @@
 @media (orientation: landscape) {
 	.grim__item-inner {
 		height: auto;
+		padding-bottom: 0;
 	}
 }
 
@@ -528,15 +525,15 @@
 	}
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 1280px) {
 	.grim__item-title {
-		font-size: 5rem;
+		font-size: 3.5rem;
 	}
 }
 
-.grim__item:nth-child(-n+6) .grim__item-title {
+/* .grim__item:nth-child(-n+6) .grim__item-title {
 	font-size: 1.5vmax;
-}
+} */
 
 .grim__item-desc {
 	font-size: 1rem;
