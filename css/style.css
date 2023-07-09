@@ -60,7 +60,25 @@
 	font-size: 3rem;
 }
 
-#video-container {
+#mobile {
+	display: block;
+}
+
+#desktop {
+	display: none;
+}
+
+@media (orientation: landscape) {
+	#mobile {
+		display: none;
+	}
+
+	#desktop {
+		display: block;
+	}
+}
+
+.video-container {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -68,7 +86,7 @@
 	height: 100vh;
 }
 
-#video {
+.video {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
