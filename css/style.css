@@ -101,7 +101,7 @@
 
 .content__subtitle {
 	color: white;
-	width: 70%;
+	width: 85%;
 	max-width: 500px;
 	z-index: 1;
 	font-size: 1.25rem;
@@ -175,6 +175,20 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.clo_link {
+	min-width: 250px;
+	border-radius: 25px;
+	box-shadow: 10px 10px 10px black;
+	background-color: white;
+	color: rgb(226, 142, 33);
+	font-size: 1.25rem;
+	padding: 7.5px;
+}
+
+.clo_link:hover {
+	color: #000;
 }
 
 #content-5 {
