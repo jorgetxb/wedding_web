@@ -13,7 +13,7 @@
 	position: relative;
 	margin-bottom: 50px;
 	margin-left: -20px;
-	padding: 0 15px;
+	padding: 0 20px;
 	background: none;
 	color: #fff;
 	background-color: #000;
@@ -26,13 +26,45 @@
 	pointer-events: auto;
 	font-size: 3rem;
 	filter: drop-shadow(5px 5px 5px black);
+	animation: beat 2s 5s infinite;
 }
+
+@keyframes beat {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
 
 @media (max-width: 1080px) {
 	.menu-trigger {
 		transform: rotate(90deg);
+		animation: beat2 2s 5s infinite;
+	}
+
+	@keyframes beat2 {
+		0% {
+			transform: rotate(90deg) scale(1);
+		}
+	
+		50% {
+			transform: rotate(90deg) scale(1.1);
+		}
+	
+		100% {
+			transform: rotate(90deg) scale(1);
+		}
 	}
 }
+
 
 .menu-trigger--close {
 	font-size: 1.5rem;
@@ -41,8 +73,6 @@
 	background: none;
 	border: 0;
 	grid-area: menu;
-	/* justify-self: start; */
-	/* align-self: end; */
 	cursor: pointer;
 	pointer-events: auto;
 	filter: drop-shadow(5px 5px 5px black);
