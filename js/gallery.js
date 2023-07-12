@@ -40,6 +40,9 @@ var currentImage = 0;
 var gallery = document.getElementById("content-6");
 
 function changeImage() {
+  
+  clearInterval(intervalo);
+
   var img = new Image();
   img.src = images[currentImage];
   img.className = "abus_photo";
@@ -62,7 +65,8 @@ function changeImage() {
 }
 
 // Cambia la imagen automáticamente cada 7.5 segundos
-setInterval(changeImage, 7500);
+var intervalo = setInterval(changeImage, 7500);
+intervalo;
 
 var opacity = 1;
 
