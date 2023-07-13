@@ -39,9 +39,8 @@ var images = [
 var currentImage = 0;
 var gallery = document.getElementById("content-6");
 
-function changeImage() {
-  
-  clearInterval(intervalo);
+
+function autoChangeImage() {
 
   var img = new Image();
   img.src = images[currentImage];
@@ -65,8 +64,16 @@ function changeImage() {
 }
 
 // Cambia la imagen automáticamente cada 7.5 segundos
-var intervalo = setInterval(changeImage, 7500);
+var intervalo = setInterval(autoChangeImage, 7500);
 intervalo;
+
+// Función para cambiar imagen y reiniciar conteo
+
+function changeImage() {
+  autoChangeImage()
+  clearInterval(intervalo);
+  intervalo = setInterval(autoChangeImage, 7500);
+};
 
 var opacity = 1;
 
