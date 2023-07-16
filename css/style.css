@@ -554,7 +554,6 @@
 }
 
 .grim__item-inner {
-	padding-bottom: 2rem;
 	display: flex;
 	height: 33vh;
 	flex-direction: column;
@@ -569,7 +568,6 @@
 @media (orientation: landscape) {
 	.grim__item-inner {
 		height: auto;
-		padding-bottom: 0;
 	}
 }
 
