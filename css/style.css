@@ -131,7 +131,7 @@
     overflow-y: auto;
 }
 
-/* .content__subtitle::-webkit-scrollbar {
+.content__subtitle::-webkit-scrollbar {
 	width: 5px;
 }
 
@@ -147,7 +147,7 @@
 
 .content__subtitle::-webkit-scrollbar-thumb:hover {
 	background: #aaa; 
-} */
+}
 
 #content-2 {
 	background-image: url(../img/bg1.jpg);
@@ -167,8 +167,8 @@
 }
 
 #content-3 {
-	background-image: url(../img/bg2.jpg);
-	background-position: 85%;
+	background-image: url(../img/bg2.png);
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
