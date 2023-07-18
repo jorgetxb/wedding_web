@@ -115,6 +115,7 @@
 
 .content__title {
 	color: white;
+	font-family: 'Cormorant Garamond', serif;
 	font-size: 3rem;
 	text-align: center;
 	z-index: 1;
