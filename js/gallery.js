@@ -1,106 +1,103 @@
-var images = [
-  "./img/gallery/imagen(1).jpg",
-  "./img/gallery/imagen(2).jpg",
-  "./img/gallery/imagen(3).jpg",
-  "./img/gallery/imagen(4).jpg",
-  "./img/gallery/imagen(5).jpg",
-  "./img/gallery/imagen(6).jpg",
-  "./img/gallery/imagen(7).jpg",
-  "./img/gallery/imagen(8).jpg",
-  "./img/gallery/imagen(9).jpg",
-  "./img/gallery/imagen(10).jpg",
-  "./img/gallery/imagen(11).jpg",
-  "./img/gallery/imagen(12).jpg",
-  "./img/gallery/imagen(13).jpg",
-  "./img/gallery/imagen(14).jpg",
-  "./img/gallery/imagen(15).jpg",
-  "./img/gallery/imagen(16).jpg",
-  "./img/gallery/imagen(17).jpg",
-  "./img/gallery/imagen(18).jpg",
-  "./img/gallery/imagen(19).jpg",
-  "./img/gallery/imagen(20).jpg",
-  "./img/gallery/imagen(21).jpg",
-  "./img/gallery/imagen(22).jpg",
-  "./img/gallery/imagen(23).jpg",
-  "./img/gallery/imagen(24).jpg",
-  "./img/gallery/imagen(25).jpg",
-  "./img/gallery/imagen(26).jpg",
-  "./img/gallery/imagen(27).jpg",
-  "./img/gallery/imagen(28).jpg",
-  "./img/gallery/imagen(29).jpg",
-  "./img/gallery/imagen(30).jpg",
-  "./img/gallery/imagen(31).jpg",
-  "./img/gallery/imagen(32).jpg",
-  "./img/gallery/imagen(33).jpg",
-  "./img/gallery/imagen(34).jpg",
-  "./img/gallery/imagen(35).jpg"
-];
-
-var currentImage = 0;
-var gallery = document.getElementById("content-6");
-
-
-function autoChangeImage() {
-
-  var img = new Image();
-  img.src = images[currentImage];
-  img.className = "abus_photo";
-
-  img.onload = function () {
-    gallery.appendChild(img);
-    var imgs = document.getElementsByTagName('img'); // Obtener todos los elementos img dentro del div
-    var cantidadImagenes = imgs.length; // Obtener la cantidad de imágenes
-    if (cantidadImagenes > 1 ) {
-      document.getElementsByClassName("abus_photo")[0].remove();
-    }
+! function ($) {
+  var defaults = {
+      sectionContainer: "> section",
+      angle: 50,
+      opacity: true,
+      scale: true,
+      outAnimation: true,
+      pageContainer: '.page_container',
+      pageOpacity: true
   };
-  // Incrementa el índice de la imagen actual
-  currentImage++;
+  $.fn.tiltedpage_scroll = function (options) {
+      var settings = $.extend({}, defaults, options),
+          el = $(this);
+      el.find(settings.sectionContainer).addClass("tps-section");
+      el.find('.tps-section').each(function () {
+          var el2 = $(this);
+          el2.wrapInner("<div class='tps-wrapper'></div>");
+      });
 
-  // Reinicia el índice si llega al final del arreglo de imágenes
-  if (currentImage >= images.length) {
-    currentImage = 0;
+      function isElementInViewport(el3) {
+          var docViewTop = $(window).scrollTop(),
+              docViewBottom = docViewTop + $(window).height(),
+              elemTop = el3.offset().top,
+              elemBottom = elemTop + el3.outerHeight(true);
+          return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+      }
+
+      function elementVisibilityMayChange(el4) {
+          if (isElementInViewport(el4)) {
+              el4.addClass("tps-inview")
+          } else {
+              el4.removeClass("tps-inview")
+          }
+      }
+      $(window).on('DOMContentLoaded load resize scroll', function () {
+          el.find(settings.sectionContainer).each(function () {
+              elementVisibilityMayChange($(this));
+          });
+          el.find('.tps-section.tps-inview > .tps-wrapper').each(function (index) {
+              var el2 = $(this),
+                  elc = el2.find(settings.pageContainer),
+                  opacity = 0,
+                  opacity2 = 0,
+                  st = $(window).scrollTop(),
+                  deg = ((el2.parent().offset().top - el2.parent().height()) - st) / $(window).height() * (settings.angle * 3),
+                  scale = ((st + $(window).height() - (el2.parent().offset().top - el2.parent().height())) / ($(window).height()));
+              if (scale > 1) scale = 1;
+              if (deg < 0) deg = 0;
+              if (st > el2.parent().offset().top) {
+                  if (settings.outAnimation == false) {
+                      opacity = 1;
+                      opacity2 = 1;
+                      if (opacity < 0) {
+                        opacity = 0;
+                        opacity2 = 0;
+                      }
+                      if (deg < 0) deg = 0;
+                  } else {
+                      opacity = ((el2.parent().offset().top + ($(window).height() * 1.2) - st)) / ($(window).height());
+                      opacity2 = opacity;
+                      opacity = Math.pow(opacity, 25);
+                      opacity2 = Math.pow(opacity2, 25);
+                      //console.log('- '+opacity2);
+                      deg = (el2.parent().offset().top - st) / $(window).height() * (settings.angle * 3);
+                      scale = ((st + $(window).height() - el2.parent().offset().top) / ($(window).height()));
+                  }
+              } else {
+                  if (index != 0) {
+                      opacity = ((st + $(window).height() - el2.parent().offset().top + (el2.height() / 2)) / $(window).height());
+                    opacity2 = opacity / 2;
+                    opacity2 = opacity2 < 0.4 ? opacity2/2 : opacity2;
+                      //console.log(opacity2);
+                      if (opacity > 1) {
+                          opacity = 1;
+                          opacity2 = 1;
+                      }
+                  } else {
+                      opacity = 1;
+                      opacity2 = 1;
+                      deg = 0;
+                      scale = 1;
+                  }
+              } if (settings.scale == false) scale = 1;
+              if (settings.angle == false) deg = 0;
+              if (settings.opacity == false) {
+                opacity = 1;
+                opacity2 = 1;
+              }
+              el2.css({
+                  'transform': 'rotateX(' + deg + 'deg) scale(' + scale + ', ' + scale + ')',
+                  opacity: opacity
+              });
+              elc.css({opacity: opacity2});
+          });
+      });
   }
-}
+}(window.jQuery);
 
-// Cambia la imagen automáticamente cada 7.5 segundos
-var intervalo = setInterval(autoChangeImage, 7500);
-intervalo;
-
-// Función para cambiar imagen y reiniciar conteo
-
-function changeImage() {
-  autoChangeImage()
-  clearInterval(intervalo);
-  intervalo = setInterval(autoChangeImage, 7500);
-};
-
-var opacity = 1;
-
-function abus_hide() {
-
-  document.getElementById("hide").style.display = "none";
-  document.getElementById("show").style.display = "block";
-
-  document.getElementById("brightness_photo").style.display = "none";
-
-  opacity -= 0.1;
-  document.querySelectorAll(".abus_text")[0].style.opacity = opacity;
-  document.querySelectorAll(".abus_text")[1].style.opacity = opacity;
-
-  if (opacity > 0) {
-    requestAnimationFrame(abus_hide);
-  }
-}
-
-function abus_show() {
-
-  document.getElementById("hide").style.display = "block";
-  document.getElementById("show").style.display = "none";
-
-  document.getElementById("brightness_photo").style.display = "block";
-  
-  document.querySelectorAll(".abus_text")[0].style.opacity = "1";
-  document.querySelectorAll(".abus_text")[1].style.opacity = "1";
-}
-  
+$(document).ready(function(){
+$(".main").tiltedpage_scroll({
+ angle: 20
+});
+});
